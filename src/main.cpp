@@ -118,12 +118,12 @@ int main()
         for (int y = 0; y < HEIGHT; y++) {
             int index = (y * WIDTH + x) * 4; // Index for the image pixel
             
-            float val = 0; // Perlin Noise value initialization
+            double val = 0; // Perlin Noise value initialization
             
-            float freq = 1; // Frequency iniatialization
-            float amp = 1; // Amplitude iniatialization
+            double freq = 1; // Frequency iniatialization
+            double amp = 1; // Amplitude iniatialization
             for (int i = 0; i < OCTAVES; i++) {
-                val += perlin(x * freq / GRID_SIZE, y * freq / GRID_SIZE) * amp; // Perlin noise calculation
+                val += perlin((double) x * freq / GRID_SIZE, (double) y * freq / GRID_SIZE) * amp; // Perlin noise calculation
                 freq *= 2; // Increase frequency for new octave
                 amp /= 2; // Decrease amplitude for new octave
             }
